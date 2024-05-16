@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { GjfsService } from '../../services/gjfs.service.ts.service';
 
 @Component({
   selector: 'gifs-search-box',
@@ -7,10 +8,27 @@ import { Component } from '@angular/core';
     <input type="text"
       class="form-control"
       placeholder="Buscar gifs..."
+      (keyup.enter)="searchTag( )"
+      #txtTagInput
       >
     `,
 
 })
 export class SearchBoxComponent {
+
+  @ViewChild('txtTagInput')
+  public tagInput!: ElementRef<HTMLInputElement>;
+
+  constructor(private gjfsService: GjfsService) {}
+
+
+   searchTag( ) {
+    const newTag = this.tagInput.nativeElement.value;
+    console.log({ newTag });
+
+    this.gjfsService.searchTag(newTag);
+    this.tagInput.nativeElement.value = '';
+
+   }
 
 }
