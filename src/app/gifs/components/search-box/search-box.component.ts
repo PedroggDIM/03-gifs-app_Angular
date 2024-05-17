@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { GjfsService } from '../../services/gjfs.service.ts.service';
+import { GjfsService } from '../../services/gifs.service.ts.service';
 
 @Component({
   selector: 'gifs-search-box',
