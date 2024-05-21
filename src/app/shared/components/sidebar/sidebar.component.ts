@@ -15,4 +15,10 @@ export class SidebarComponent {
  get tags() {
   return this.gifsService.tagsHistory;
  }
+// envio texto del botón al buscador
+enviaTexto(tag: string) {
+  this.gifsService.searchTag(tag);
+  console.log(tag);
+ }
+
 }
