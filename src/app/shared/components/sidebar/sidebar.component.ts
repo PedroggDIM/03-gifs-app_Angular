@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GjfsService } from '../../../gifs/services/gifs.service.ts.service';
+import { GifsService } from '../../../gifs/services/gifs.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -9,7 +9,7 @@ import { GjfsService } from '../../../gifs/services/gifs.service.ts.service';
 })
 export class SidebarComponent {
 
-  constructor(private gifsService: GjfsService) {}
+  constructor(private gifsService: GifsService) {}
  // como el servicio anterior es privado creo un getter
  // para usarlo fuera.
  get tags() {
